@@ -1,7 +1,8 @@
 """One Sentence for a Traveler from 1800.
 
 Writes a single sentence explaining the modern internet to a time
-traveler from 1800, to /output/entry.txt.
+traveler from 1800, to entry.txt in the output directory (/output by
+default, or OUTPUT_DIR when set). Deterministic, no network.
 """
 
 import os
@@ -13,7 +14,7 @@ SENTENCE = (
     "open on every desk at once."
 )
 
-OUTPUT_DIR = "/output"
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/output")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "entry.txt")
 
 
